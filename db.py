@@ -51,8 +51,7 @@ def save_mailbox(user_id: int, account_id: str, address: str, password: str, tok
                     address = EXCLUDED.address,
                     password = EXCLUDED.password,
                     token = EXCLUDED.token
-                """
-                ,
+                """,
                 (user_id, account_id, address, password, token),
             )
         conn.commit()
@@ -128,17 +127,4 @@ def delete_mailbox(user_id: int):
                 "DELETE FROM mailboxes WHERE user_id = %s",
                 (user_id,),
             )
-        conn.commit()            "password": row[3],
-            "token": row[4],
-            "last_seen_message_id": row[5],
-        }
-        for row in rows
-    ]
-
-
-def delete_mailbox(user_id: int):
-    conn = get_connection()
-    cur = conn.cursor()
-    cur.execute("DELETE FROM mailboxes WHERE user_id=?", (user_id,))
-    conn.commit()
-    conn.close()
+        conn.commit()
