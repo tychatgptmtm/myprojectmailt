@@ -202,7 +202,7 @@ async def check_new_messages_loop():
 @dp.message(Command("start"))
 async def start_cmd(message: Message):
     text = (
-        "Привет. Я бот для временной почты на базе mail.tm\n\n"
+        "Привет. Я бот для временной почты\n\n"
         "Что я умею:\n"
         "• создать случайную почту\n"
         "• создать почту со своим именем\n"
